@@ -1,0 +1,42 @@
+Summer Project Outline
+
+Tutor: Dan Birman
+Student: Sam Feldman
+
+This is an in-progress outline for a 6-week project for Sam to complete over the summer in 2015. As the project progresses we will fill out the information in this outline and populate this git repo with the relevant Java code.
+
+The plan is to jump in to Java and see if we can put together a fairly simple orbital mechanics simulation. To do this we are going to create some "objects" in Java including planets, space craft, and stars. This will be Phase 1. In Phase 2 we will do some basic physics calculations (position, velocity, acceleration) based on gravitational pull to put the celestial bodies in orbit, and to let our spacecraft fly from planet to planet. If we have time, we will implement Phase 3 where we will render the objects in their appropriate positions in space. Each phase should take 2 weeks to complete. Our model will stay entirely in 2-dimensions.
+
+### Phase 1: Object-Oriented Programming and Java ###
+
+Let's start simple: We want to build a tree of "objects" that are going to have certain properties, get/set methods, and some ability to interact with each other. For example, we are going to need a "sun" object:
+
+Object -> CelestialBody -> Star -> "The Sun"
+
+Note that I'm using Uppercase for Objects.
+
+This relationship indicates that "The Sun" is a Star, which is a CelestialBody, which is an Object. "Object" is the base class in Java that everything inherits from. Now we should think a bit, what kinds of properties do CelestialBodies have and what kinds of properties do Stars have? Here's a possible list:
+
+CelestialBody: xPosition [int], yPosition [int], velocity [int], mass [int], name [string]
+Star: orbitingPlanets [list]
+
+Note that I'm using camelCase for variables, to distinguish them from Objects.
+
+Now, each of these objects is going to need some functions as well. As you started to learn in Python at the end of last semester you should make all of these variables "private" in Java, so that outside users can't access them directly. Then, write a "getX" and "setX" function for each variable that allows you to modify it's value. Careful, these functions need to check for impossibilities! You shouldn't be able to set your velocity to a number larger than light-speed, for example.
+
+Here is a full list of the Objects I would like you to build:
+
+The Sun
+The Earth
+The Moon
+Mars
+Pluto
+Sam's Spacestation
+Sam's Spacecraft
+Dan's Comet
+
+Each object needs to have appropriate variables, and should be related to the other Objects appropriately (think of this as a "tree", everything is an "Object" but only some things are "Planets" or "Stars" or "Vehicles", etc...). In addition, each Object should have get/set methods for it's private variables. Good luck! I anticipate this part of the project taking you 8-10 hours total, so you'll need to spend considerable time on it outside of our weekly meetings.
+
+### Phase 2: Real-time Physics ###
+
+### Phase 3: Interactive GUIs ###
